@@ -52,9 +52,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -172,8 +174,25 @@ fun homescreen(navController: NavController , viewModel: PageLink): Unit {
                 }
             }
         }
+ //                                        adopt buttons
+        Box(
+            modifier = Modifier
+           //     .fillMaxHeight(0.025f)
+                .fillMaxWidth()
+                .padding(top= 16.dp),
+                 contentAlignment = Alignment.Center
+        ) {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(20.dp)
+              //  verticalAlignment = Alignment.CenterVertically
+            ) {
+                CircularButton(text = "Adopt Cats")
+                CircularButton(text = "Adopt Dogs")
+            }
+        }
 
 
+        //                        cards listing home page
 
                 val homepage = listOf(
                     listing(name = "Coco", pic = R.drawable.adp1, breed = "Rabbit", Price = 2500, age = 1),
@@ -181,7 +200,10 @@ fun homescreen(navController: NavController , viewModel: PageLink): Unit {
                 )
 
 
-        Row {
+
+        Row{
+
+
             for (listing in homepage) {
                 Box(
                     modifier = Modifier.fillMaxHeight(0.2f).weight(0.5f)
@@ -252,34 +274,31 @@ fun homescreen(navController: NavController , viewModel: PageLink): Unit {
             )
 
         }
-
-
-
-
-
-
-
-
-
-        /*
-
-
-
-
-
-
-                    Image(
-                        painter = painterResource(R.drawable.home3),
-                        "home1",
-                        modifier = Modifier.fillMaxSize(),
-                        contentScale = ContentScale.Crop
-                    )
-
-
-
-         */
+        
 
         }
 
     }
+
+
+@Composable
+fun CircularButton(text: String) {
+    Button(
+        onClick = { /* Handle click */ },
+        modifier = Modifier
+           // .padding(horizontal = 5.dp)
+            .clip(RoundedCornerShape(40.dp))
+           , // Adjust size as needed
+        shape = RectangleShape,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Color.White.copy(alpha = 0.8f), // Translucent white
+
+        )
+    ) {
+        Text(text, fontWeight = FontWeight.SemiBold , fontSize = 18.sp
+            , color = colorResource(R.color.mocha)
+            , modifier = Modifier.padding(vertical = 5.dp)
+        )
+    }
+}
 

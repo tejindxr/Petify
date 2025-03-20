@@ -60,7 +60,7 @@ fun TopBar(navController: NavController, content: @Composable () -> Unit) {
         drawerContent = {
             ModalDrawerSheet(
                 modifier = Modifier.fillMaxWidth(0.65f),
-                drawerContainerColor = Color.Black
+                drawerContainerColor = Color.White
             ) {
                 drawerCard(navController)
             }
@@ -74,6 +74,7 @@ fun TopBar(navController: NavController, content: @Composable () -> Unit) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
+                    .background(color = Color.Black)
                     .padding(top = 50.dp ,bottom = bottomPadding)
             ) {
                 Image(
