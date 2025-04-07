@@ -21,9 +21,12 @@ import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.TopAppBar
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.DrawerDefaults
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.ModalDrawerSheet
@@ -77,13 +80,34 @@ fun TopBar(navController: NavController, content: @Composable () -> Unit) {
                     .background(color = Color.Black)
                     .padding(top = 50.dp ,bottom = bottomPadding)
             ) {
+
+                                                    //background
                 Image(
                     painter = painterResource(R.drawable.bg2),
                     contentDescription = "splash",
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop
                 )
+                                                    //content
                 content()
+
+                                                    //home button
+
+                FloatingActionButton(
+                    onClick = { navController.navigate("mainNAV") },
+                    modifier = Modifier
+                        .align(Alignment.BottomEnd) // Align only the button
+                        .padding(end = 20.dp, bottom = 40.dp) // Adjust position slightly towards center
+                        .size(64.dp), // Button size
+                    shape = CircleShape,
+                    containerColor = Color(0xFFD2B48C), // Light Mocha color
+                    contentColor = Color.White
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Home, // Home hut icon
+                        contentDescription = "Home"
+                    )
+                }
             }
         }
     }
@@ -132,7 +156,15 @@ fun CustomTopAppBar(drawerState: DrawerState, scope: CoroutineScope, navControll
 
                 // Action Icon (Profile) - Right-aligned
                 IconButton(
-                    onClick = { navController.navigate("profileNAV") },
+                    onClick = {
+                        if (login){
+
+                            navController.navigate("profileNAV")
+                        }
+                        else{
+                            navController.navigate("signinNAV")
+                        }
+                        },
                     modifier = Modifier.weight(0.8f) // Takes 1 part of available space
                 ) {
                     Icon(painter = painterResource(R.drawable.user), contentDescription = "Profile")

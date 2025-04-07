@@ -39,7 +39,7 @@ public final data class listing(
     val name: String,
     val pic: Int,
     val breed: String,
-    val Price: Int,
+    val place: String,
     var age: Int?
 )
 
@@ -56,11 +56,11 @@ class PageLink : ViewModel() {
 fun Dogs(navController: NavController , viewModel: PageLink) {
 
     val dog= listOf(
-        listing(name = "Bruno", pic = R.drawable.adp1, breed = "Labrador Retriever", Price = 8000, age = 2),
-        listing(name = "Max", pic = R.drawable.adp2, breed = "German Shepherd", Price = 12000, age = 3),
-        listing(name = "Bella", pic = R.drawable.adp3, breed = "Golden Retriever", Price = 15000, age = 1),
-        listing(name = "Rocky", pic = R.drawable.adp4, breed = "Beagle", Price = 7000, age = 4),
-        listing(name = "Charlie", pic = R.drawable.adp5, breed = "Pomeranian", Price = 10000, age = 2)
+        listing(name = "Bruno", pic = R.drawable.adp1, breed = "Labrador Retriever",  "Delhi", age = 2),
+        listing(name = "Max", pic = R.drawable.adp2, breed = "German Shepherd",  "Delhi", age = 3),
+        listing(name = "Bella", pic = R.drawable.adp3, breed = "Golden Retriever", "Chandigarh", age = 1),
+        listing(name = "Rocky", pic = R.drawable.adp4, breed = "Beagle", "Punjabi Bagh", age = 4),
+        listing(name = "Charlie", pic = R.drawable.adp5, breed = "Pomeranian", "Delhi", age = 2)
     )
 
 
@@ -93,11 +93,11 @@ fun Cats(navController: NavController, viewModel: PageLink){
 
 
     val cat = listOf(
-        listing(name = "Luna", pic = R.drawable.adp1, breed = "Persian", Price = 9000, age = 2),
-        listing(name = "Milo", pic = R.drawable.adp2, breed = "Siamese", Price = 8000, age = 1),
-        listing(name = "Simba", pic = R.drawable.adp3, breed = "Maine Coon", Price = 15000, age = 3),
-        listing(name = "Chloe", pic = R.drawable.adp4, breed = "Bengal", Price = 13000, age = 2),
-        listing(name = "Oliver", pic = R.drawable.adp5, breed = "Ragdoll", Price = 11000, age = 4)
+        listing(name = "Bruno", pic = R.drawable.adp1, breed = "Labrador Retriever",  "Delhi", age = 2),
+        listing(name = "Max", pic = R.drawable.adp2, breed = "German Shepherd",  "Delhi", age = 3),
+        listing(name = "Bella", pic = R.drawable.adp3, breed = "Golden Retriever", "Chandigarh", age = 1),
+        listing(name = "Rocky", pic = R.drawable.adp4, breed = "Beagle", "Punjabi Bagh", age = 4),
+        listing(name = "Charlie", pic = R.drawable.adp5, breed = "Pomeranian", "Delhi", age = 2)
     )
 
 
@@ -127,11 +127,11 @@ fun Cats(navController: NavController, viewModel: PageLink){
 fun Others(navController: NavController , viewModel: PageLink){
 
     val others = listOf(
-        listing(name = "Coco", pic = R.drawable.adp1, breed = "Rabbit", Price = 2500, age = 1),
-        listing(name = "Daisy", pic = R.drawable.adp2, breed = "Guinea Pig", Price = 3000, age = 2),
-        listing(name = "Jack", pic = R.drawable.adp3, breed = "Hamster", Price = 1500, age = 1),
-        listing(name = "Polly", pic = R.drawable.adp4, breed = "Parrot", Price = 5000, age = 3),
-        listing(name = "Mimi", pic = R.drawable.adp5, breed = "Tortoise", Price = 7000, age = 5)
+        listing(name = "Bruno", pic = R.drawable.adp1, breed = "Labrador Retriever",  "Delhi", age = 2),
+        listing(name = "Max", pic = R.drawable.adp2, breed = "German Shepherd",  "Delhi", age = 3),
+        listing(name = "Bella", pic = R.drawable.adp3, breed = "Golden Retriever", "Chandigarh", age = 1),
+        listing(name = "Rocky", pic = R.drawable.adp4, breed = "Beagle", "Punjabi Bagh", age = 4),
+        listing(name = "Charlie", pic = R.drawable.adp5, breed = "Pomeranian", "Delhi", age = 2)
     )
 
 
@@ -201,7 +201,7 @@ fun productCard(listing: listing, navController: NavController, viewModel: PageL
             )
 
             Text(
-                text = "₹${listing.Price}",
+                text = listing.place,
                 style = MaterialTheme.typography.bodyMedium,
                 fontWeight = FontWeight.SemiBold,
                 color = Color.Black,

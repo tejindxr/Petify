@@ -27,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -85,7 +86,7 @@ fun splash(){
             modifier = Modifier.fillMaxSize(),
             contentAlignment = androidx.compose.ui.Alignment.Center
         ) {
-            Image(painter = painterResource(R.drawable.splash) , "splash",
+            Image(painter = painterResource(R.drawable.bg2) , "splash",
                 modifier = Modifier.fillMaxSize()
                 , contentScale = ContentScale.Crop )
 
@@ -99,7 +100,7 @@ fun splash(){
             ) {
             Text(
                  "\nPetify"  , fontWeight = FontWeight.Bold,
-                color = Color.White ,
+                color = colorResource(R.color.mocha),
                 fontSize = 40.sp ,
                 modifier = Modifier.padding(bottom = 50.dp).
                 align(Alignment.Center)

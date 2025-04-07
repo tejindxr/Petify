@@ -110,25 +110,25 @@ fun ProfileScreen(navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            ProfileOption(icon = Icons.Default.ShoppingCart, label = "My Orders") {
+            ProfileOption(icon = Icons.Default.ShoppingCart, label = "Address") {
                 showDialog = true
-                dialogTitle = "My Orders"
+                dialogTitle = "Address"
                 dialogContent = "Here are your recent orders..."
             }
-            ProfileOption(icon = Icons.Default.Person, label = "Customer Care") {
+            ProfileOption(icon = Icons.Default.Person, label = "Animal Care") {
                 showDialog = true
-                dialogTitle = "Customer Care"
+                dialogTitle = "Animal Care"
+                dialogContent = "For animal care support."
+            }
+            ProfileOption(icon = Icons.Default.LocationOn, label = "Contact us") {
+                showDialog = true
+                dialogTitle = "Contact us"
                 dialogContent = "Contact us at support@example.com or call 1800-123-456."
             }
-            ProfileOption(icon = Icons.Default.LocationOn, label = "Saved Addresses") {
+            ProfileOption(icon = Icons.Default.Call, label = "Contribute to NGO") {
                 showDialog = true
-                dialogTitle = "Saved Addresses"
-                dialogContent = "Your saved addresses will be displayed here."
-            }
-            ProfileOption(icon = Icons.Default.Call, label = "Return & Refund") {
-                showDialog = true
-                dialogTitle = "Return & Refund"
-                dialogContent = "Return and refund policies explained here."
+                dialogTitle = "Contribute to NGO"
+                dialogContent = "Contribut to us directly."
             }
         }
 
@@ -136,7 +136,8 @@ fun ProfileScreen(navController: NavController) {
 
         // Logout Button
         Button(
-            onClick = { navController.navigate("signinNAV") },
+            onClick = { navController.navigate("signinNAV")
+                      login = false},
             shape = RectangleShape,
             colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
             modifier = Modifier

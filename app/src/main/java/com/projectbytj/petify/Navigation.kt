@@ -54,6 +54,16 @@ fun Nav(viewModel: PageLink){
                 ConfirmationScreen(tj)
             }
         }
+        composable("signinNAV") {
+            TopBar(tj) {
+                signin(tj)
+            }
+        }
+        composable("signupNAV") {
+            TopBar(tj) {
+                signup(tj)
+            }
+        }
     }
 
     startup(navController = tj)

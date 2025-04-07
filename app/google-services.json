@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "341782005001",
+    "project_id": "petify-afcec",
+    "storage_bucket": "petify-afcec.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341782005001:android:142a0dad82bb6e0c9f3fd8",
+        "android_client_info": {
+          "package_name": "com.projectbytj.petify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWSDcb2A_XveAyRGGEnNL-npfhn_rqg7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

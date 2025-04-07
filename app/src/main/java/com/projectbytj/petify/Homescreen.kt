@@ -179,24 +179,26 @@ fun homescreen(navController: NavController , viewModel: PageLink): Unit {
             modifier = Modifier
            //     .fillMaxHeight(0.025f)
                 .fillMaxWidth()
-                .padding(top= 16.dp),
+                .padding(vertical = 16.dp),
                  contentAlignment = Alignment.Center
         ) {
             Row(
                 horizontalArrangement = Arrangement.spacedBy(20.dp)
               //  verticalAlignment = Alignment.CenterVertically
             ) {
-                CircularButton(text = "Adopt Cats")
-                CircularButton(text = "Adopt Dogs")
+                CircularButton(text = "Adopt Cats" , "dogsNAV", navController)
+                CircularButton(text = "Adopt Dogs" , "catsNAV" , navController)
             }
         }
 
 
+        heading("Recently Listed")
+
         //                        cards listing home page
 
                 val homepage = listOf(
-                    listing(name = "Coco", pic = R.drawable.adp1, breed = "Rabbit", Price = 2500, age = 1),
-                    listing(name = "Pikachu", pic = R.drawable.adp2, breed = "Kitty", Price = 10000, age = 2),
+                    listing(name = "Coco", pic = R.drawable.adp1, breed = "Rabbit", "Chandigarh", age = 1),
+                    listing(name = "Pikachu", pic = R.drawable.adp2, breed = "Kitty", "Delhi", age = 2),
                 )
 
 
@@ -282,9 +284,9 @@ fun homescreen(navController: NavController , viewModel: PageLink): Unit {
 
 
 @Composable
-fun CircularButton(text: String) {
+fun CircularButton(text: String , nav: String , navController: NavController) {
     Button(
-        onClick = { /* Handle click */ },
+        onClick = { navController.navigate(nav) },
         modifier = Modifier
            // .padding(horizontal = 5.dp)
             .clip(RoundedCornerShape(40.dp))

@@ -103,7 +103,7 @@ fun info_page(navController: NavController, viewModel: PageLink) {
                     )
 
                     Text(
-                        text = "₹${pet.Price}",
+                        text = pet.place,
                         modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                         fontSize = 25.sp ,
                         fontWeight = FontWeight.Bold
@@ -153,7 +153,12 @@ fun info_page(navController: NavController, viewModel: PageLink) {
 
             Button(
                 onClick ={
-                    navController.navigate("thankyouNAV")
+                    if(login){
+                        navController.navigate("thankyouNAV")
+                }
+                    else{
+                        navController.navigate("signinNAV")
+                }
                 },
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
